@@ -1,41 +1,47 @@
 package all;
 
+
+import com.sun.javafx.beans.IDProperty;
+
+import javax.annotation.Generated;
+
+@Entity
+@Table(name = "TB_BUKU")
+
 public class Book {
 
-    private String title;
-    private String author;
-    private boolean isPinjam;
-    private boolean isHapus;
+    @Id
+    @Column (name = "ID_BUKU")
+    @Generated(strategy = Generationtype.IDENTITY)
+    private int id;
 
-    public String getTitle() {
-        return title;
+    @Column (Name = "NAMA_PENGARANG", length = 255)
+    private String namaPengarang;
+
+    @Column (Name = "JUDUL", length = 255)
+    private String judul;
+
+    public int getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getNamaPengarang() {
+        return namaPengarang;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setNamaPengarang(String namaPengarang) {
+        this.namaPengarang = namaPengarang;
     }
 
-    public boolean isPinjam() {
-        return isPinjam;
+    public String getJudul() {
+        return judul;
     }
 
-    public void setPinjam(boolean pinjam) {
-        isPinjam = pinjam;
-    }
-
-    public boolean isHapus() {
-        return isHapus;
-    }
-
-    public void setHapus(boolean hapus) {
-        isHapus = hapus;
+    public void setJudul(String judul) {
+        this.judul = judul;
     }
 }
