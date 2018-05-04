@@ -4,6 +4,7 @@ package all;
 import com.sun.javafx.beans.IDProperty;
 
 import javax.annotation.Generated;
+import javax.naming.Name;
 
 @Entity
 @Table(name = "TB_BUKU")
@@ -15,11 +16,14 @@ public class Book {
     @Generated(strategy = Generationtype.IDENTITY)
     private int id;
 
-    @Column (Name = "NAMA_PENGARANG", length = 255)
+    @Column (name = "NAMA_PENGARANG", length = 255)
     private String namaPengarang;
 
-    @Column (Name = "JUDUL", length = 255)
+    @Column (name = "JUDUL", length = 255)
     private String judul;
+
+    @Column (name = "IS_PINJAM")
+    private boolean is_Pinjam;
 
     public int getId() {
         return id;
@@ -44,4 +48,13 @@ public class Book {
     public void setJudul(String judul) {
         this.judul = judul;
     }
+
+    public boolean isIs_Pinjam() {
+        return is_Pinjam;
+    }
+
+    public void setIs_Pinjam(boolean is_Pinjam) {
+        this.is_Pinjam = is_Pinjam;
+    }
 }
+
