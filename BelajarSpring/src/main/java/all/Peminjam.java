@@ -1,15 +1,21 @@
 package all;
 
+import javax.annotation.Generated;
+
+@Entity
+@Table(name = "TB_PEMINJAM")
+
 public class Peminjam {
-    private String idPeminjam, namaPeminjam, alamatPeminjam;
 
-    public String getIdPeminjam() {
-        return idPeminjam;
-    }
+    @Id
+    @Column (name = "ID_PEMINJAM")
+    @Generated(strategy = Generationtype.IDENTITY)
 
-    public void setIdPeminjam(String idPeminjam) {
-        this.idPeminjam = idPeminjam;
-    }
+    @Column (name = "NAMA_PEMINJAM")
+    private String namaPeminjam;
+
+    @Column (name = "ALAMAT_PEMINJAM")
+    private String alamatPeminjam;
 
     public String getNamaPeminjam() {
         return namaPeminjam;
